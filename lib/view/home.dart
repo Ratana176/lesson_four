@@ -12,23 +12,46 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Home"),
-      ),
-      drawer: NavigationDrawer(),
-      body: GridView.count(
-        primary: false,
-        padding: setScreenPadding(context, left: 2, right: 2, top: 2),
-        crossAxisSpacing: 10,
-        mainAxisSpacing: 10,
-        crossAxisCount: 2,
-        children: <Widget>[
-          CardCategoryItem(imageUrl: 'images/computer.png', title: 'Electronic',),
-          CardCategoryItem(imageUrl: 'images/wallet.png', title: 'Job',),
-          CardCategoryItem(imageUrl: 'images/food.png', title: 'Food',),
-          CardCategoryItem(imageUrl: 'images/shirt.png', title: 'Clothes',)
-        ],
-      )
-    );
+        appBar: AppBar(
+          title: Text("Home"),
+        ),
+        drawer: NavigationDrawer(),
+        body: GridView.count(
+          primary: false,
+          padding: setScreenPadding(context, left: 2, right: 2, top: 2),
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+          crossAxisCount: 2,
+          children: <Widget>[
+            InkWell(
+              child: CardCategoryItem(
+                imageUrl: 'images/computer.png',
+                title: 'Electronic',
+              ),
+              onTap: (){},
+            ),
+            InkWell(
+              child: CardCategoryItem(
+                imageUrl: 'images/wallet.png',
+                title: 'Job',
+              ),
+              onTap: () {},
+            ),
+            InkWell(
+              child: CardCategoryItem(
+                imageUrl: 'images/food.png',
+                title: 'Food',
+              ),
+              onTap: (){},
+            ),
+            InkWell(
+              child: CardCategoryItem(
+                imageUrl: 'images/shirt.png',
+                title: 'Clothes',
+              ),
+              onTap: (){},
+            )
+          ],
+        ));
   }
 }

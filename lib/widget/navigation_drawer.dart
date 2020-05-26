@@ -1,47 +1,55 @@
-
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class NavigationDrawer extends StatelessWidget{
-
+class NavigationDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: Column(
-        children: <Widget>[
-          Container(
+        child: ListView(
+      padding: EdgeInsets.zero,
+      children: <Widget>[
+        Container(
             color: Colors.blue,
-            child: SafeArea(
-              child: Column(
+            child: DrawerHeader(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-                  DrawerHeader(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                    ),
-                    child: Row(
+                  Image.asset(
+                    "images/user_male.png",
+                    height: 80,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text("test"),
-                        Text("test")
+                        Text("Chan marida", style: TextStyle(color: Colors.white),),
+                        Text("Chan.marida@gmail.com", style: TextStyle(color: Colors.white),)
                       ],
                     ),
                   )
                 ],
               ),
-            ),
-          ),
-          Container(
-            child: Column(
-              children: <Widget>[
-                ListView(
-                  children: <Widget>[
-                    Text("Test")
-                  ],
-                ),
-              ],
-            ),
-          )
-        ],
-      )
-    );
+            )
+        ),
+        ListTile(
+          leading: Icon(Icons.multiline_chart),
+          title: Text("Add Product"),
+        ),
+        ListTile(
+          leading: Icon(Icons.calendar_today),
+          title: Text("About Us"),
+        ),
+        ListTile(
+          leading: Icon(Icons.notifications),
+          title: Text("Edit Profile"),
+        ),
+        ListTile(
+          leading: Icon(Icons.keyboard_return),
+          title: Text("Logout"),
+        ),
+      ],
+    ));
   }
-
 }

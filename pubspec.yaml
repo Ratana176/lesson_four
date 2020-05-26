@@ -54,6 +54,8 @@ flutter:
     - images/shirt.png
     - images/wallet.png
     - images/cart.png
+    - images/user.png
+    - images/user_male.png
     - images/logo-biz.svg
   #   - images/a_dot_ham.jpeg
 
